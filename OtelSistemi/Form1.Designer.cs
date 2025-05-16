@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.ribbonControl1 = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
+            this.btnDurumTanım = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPage2 = new DevExpress.XtraBars.Ribbon.RibbonPage();
@@ -43,7 +44,7 @@
             this.ribbonPageGroup5 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPage6 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup6 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.btnDurumTanım = new DevExpress.XtraBars.BarButtonItem();
+            this.btnBirimTanimlari = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -53,9 +54,10 @@
             this.ribbonControl1.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
             this.ribbonControl1.ExpandCollapseItem,
             this.barButtonItem1,
-            this.btnDurumTanım});
+            this.btnDurumTanım,
+            this.btnBirimTanimlari});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.MaxItemId = 3;
+            this.ribbonControl1.MaxItemId = 4;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1,
@@ -73,6 +75,15 @@
             this.barButtonItem1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.Image")));
             this.barButtonItem1.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.LargeImage")));
             this.barButtonItem1.Name = "barButtonItem1";
+            // 
+            // btnDurumTanım
+            // 
+            this.btnDurumTanım.Caption = "Durum Tanımları";
+            this.btnDurumTanım.Id = 2;
+            this.btnDurumTanım.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnDurumTanım.ImageOptions.Image")));
+            this.btnDurumTanım.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnDurumTanım.ImageOptions.LargeImage")));
+            this.btnDurumTanım.Name = "btnDurumTanım";
+            this.btnDurumTanım.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem2_ItemClick);
             // 
             // ribbonPage1
             // 
@@ -144,16 +155,17 @@
             // ribbonPageGroup6
             // 
             this.ribbonPageGroup6.ItemLinks.Add(this.btnDurumTanım);
+            this.ribbonPageGroup6.ItemLinks.Add(this.btnBirimTanimlari);
             this.ribbonPageGroup6.Name = "ribbonPageGroup6";
             // 
-            // btnDurumTanım
+            // btnBirimTanimlari
             // 
-            this.btnDurumTanım.Caption = "Durum Tanımları";
-            this.btnDurumTanım.Id = 2;
-            this.btnDurumTanım.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem2.ImageOptions.Image")));
-            this.btnDurumTanım.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem2.ImageOptions.LargeImage")));
-            this.btnDurumTanım.Name = "btnDurumTanım";
-            this.btnDurumTanım.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem2_ItemClick);
+            this.btnBirimTanimlari.Caption = "Birim Tanımları";
+            this.btnBirimTanimlari.Id = 3;
+            this.btnBirimTanimlari.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem2.ImageOptions.Image")));
+            this.btnBirimTanimlari.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem2.ImageOptions.LargeImage")));
+            this.btnBirimTanimlari.Name = "btnBirimTanimlari";
+            this.btnBirimTanimlari.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem2_ItemClick_1);
             // 
             // Form1
             // 
@@ -187,6 +199,7 @@
         private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage6;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup6;
         private DevExpress.XtraBars.BarButtonItem btnDurumTanım;
+        private DevExpress.XtraBars.BarButtonItem btnBirimTanimlari;
     }
 }
 
