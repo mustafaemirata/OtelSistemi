@@ -76,5 +76,11 @@ namespace OtelSistemi
             Formlar.Tanımlamalar.FrmUrunGrup fr = new Formlar.Tanımlamalar.FrmUrunGrup();
             fr.Show();
         }
+
+        private void barButtonItem10_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Formlar.Personel.FrmPersonelKart fr = new Formlar.Personel.FrmPersonelKart();
+            fr.Show();
+        }
     }
 }
