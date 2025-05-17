@@ -61,5 +61,7 @@ namespace OtelSistemi.Formlar.Tanımlamalar
                 XtraMessageBox.Show("Bilgiler kaydedilirken hata oluştu.");
             }
         }
+
+      
     }
 }

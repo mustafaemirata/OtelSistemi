@@ -13,27 +13,13 @@ using OtelSistemi.Entitiy;
 
 namespace OtelSistemi.Formlar.Tanımlamalar
 {
-    public partial class FrmTelefon : Form
+    public partial class FrmUrunGrup : Form
     {
-        public FrmTelefon()
+        public FrmUrunGrup()
         {
             InitializeComponent();
         }
         DbOtelEntities1 db = new DbOtelEntities1();
-
-        private void FrmTelefon_Load(object sender, EventArgs e)
-        {
-            db.Tbl_Telefon.Load();
-            bindingSource1.DataSource = db.Tbl_Telefon.Local;
-
-
-            repositoryItemLookUpEdit1.DataSource = (from x in db.Tbl_Durum
-                                                        select new
-                                                        {
-                                                            x.DurumID,
-                                                            x.DurumAd
-                                                        }).ToList();
-        }
 
         private void gridView1_CellValueChanged(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
         {
@@ -50,9 +36,22 @@ namespace OtelSistemi.Formlar.Tanımlamalar
 
         private void silToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
             bindingSource1.RemoveCurrent();
             db.SaveChanges();
+        }
+
+        private void FrmUrunGrup_Load(object sender, EventArgs e)
+        {
+            db.Tbl_UrunGrup.Load();
+            bindingSource1.DataSource = db.Tbl_UrunGrup.Local;
+
+
+            repositoryItemLookUpEdit2.DataSource = (from x in db.Tbl_Durum
+                                                    select new
+                                                    {
+                                                        x.DurumID,
+                                                        x.DurumAd
+                                                    }).ToList();
         }
     }
 }

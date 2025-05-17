@@ -13,26 +13,21 @@ using OtelSistemi.Entitiy;
 
 namespace OtelSistemi.Formlar.Tanımlamalar
 {
-    public partial class FrmTelefon : Form
+    public partial class FrmUlke : Form
     {
-        public FrmTelefon()
+        public FrmUlke()
         {
             InitializeComponent();
         }
         DbOtelEntities1 db = new DbOtelEntities1();
 
-        private void FrmTelefon_Load(object sender, EventArgs e)
+        private void FrmUlke_Load(object sender, EventArgs e)
         {
-            db.Tbl_Telefon.Load();
-            bindingSource1.DataSource = db.Tbl_Telefon.Local;
+            db.Tbl_Ulke.Load();
+            bindingSource1.DataSource = db.Tbl_Ulke.Local;
 
 
-            repositoryItemLookUpEdit1.DataSource = (from x in db.Tbl_Durum
-                                                        select new
-                                                        {
-                                                            x.DurumID,
-                                                            x.DurumAd
-                                                        }).ToList();
+           
         }
 
         private void gridView1_CellValueChanged(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
