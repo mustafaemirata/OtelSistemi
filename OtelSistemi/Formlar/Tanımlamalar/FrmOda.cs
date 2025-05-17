@@ -13,21 +13,21 @@ using OtelSistemi.Entitiy;
 
 namespace OtelSistemi.Formlar.Tanımlamalar
 {
-    public partial class FrmKasa : Form
+    public partial class FrmOda : Form
     {
-        public FrmKasa()
+        public FrmOda()
         {
             InitializeComponent();
         }
         DbOtelEntities1 db = new DbOtelEntities1();
 
-        private void FrmKasa_Load(object sender, EventArgs e)
+        private void FrmOda_Load(object sender, EventArgs e)
         {
-            db.Tbl_Kasa.Load();
-            bindingSource1.DataSource = db.Tbl_Kasa.Local;
+            db.Tbl_Oda.Load();
+            bindingSource1.DataSource = db.Tbl_Oda.Local;
 
 
-            repositoryItemLookUpEdit1Durum.DataSource = (from x in db.Tbl_Durum
+            repositoryItemLookUpEditDurum.DataSource = (from x in db.Tbl_Durum
                                                          select new
                                                          {
                                                              x.DurumID,
@@ -37,9 +37,23 @@ namespace OtelSistemi.Formlar.Tanımlamalar
 
         private void gridView1_CellValueChanged(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
         {
+
+        }
+
+        private void silToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+            bindingSource1.RemoveCurrent();
+            db.SaveChanges();
+        }
+
+        private void gridView2_CellValueChanged(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
+        {
+
             try
             {
                 db.SaveChanges();
+
             }
             catch (Exception)
             {

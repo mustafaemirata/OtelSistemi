@@ -13,18 +13,18 @@ using OtelSistemi.Entitiy;
 
 namespace OtelSistemi.Formlar.Tanımlamalar
 {
-    public partial class FrmKasa : Form
+    public partial class FrmKur : Form
     {
-        public FrmKasa()
+        public FrmKur()
         {
             InitializeComponent();
         }
         DbOtelEntities1 db = new DbOtelEntities1();
 
-        private void FrmKasa_Load(object sender, EventArgs e)
+        private void FrmKur_Load(object sender, EventArgs e)
         {
-            db.Tbl_Kasa.Load();
-            bindingSource1.DataSource = db.Tbl_Kasa.Local;
+            db.Tbl_Kur.Load();
+            bindingSource1.DataSource = db.Tbl_Kur.Local;
 
 
             repositoryItemLookUpEdit1Durum.DataSource = (from x in db.Tbl_Durum
@@ -46,6 +46,12 @@ namespace OtelSistemi.Formlar.Tanımlamalar
 
                 XtraMessageBox.Show("Bilgiler kaydedilirken hata oluştu.");
             }
+        }
+
+        private void silToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            bindingSource1.RemoveCurrent();
+            db.SaveChanges();
         }
     }
 }
