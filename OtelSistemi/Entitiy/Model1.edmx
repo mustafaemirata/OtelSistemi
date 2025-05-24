@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="DbOtelModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="DbOtelModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="sysdiagrams">
           <Key>
             <PropertyRef Name="diagram_id" />
@@ -114,6 +114,10 @@
           <Property Name="Gorev" Type="int" />
           <Property Name="Aciklama" Type="nvarchar" MaxLength="250" />
           <Property Name="Durum" Type="int" />
+          <Property Name="KimlikOn" Type="nvarchar" MaxLength="250" />
+          <Property Name="KimlikArka" Type="nvarchar" MaxLength="250" />
+          <Property Name="Sifre" Type="varchar" MaxLength="50" />
+          <Property Name="Yetki" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="Tbl_Telefon">
           <Key>
@@ -440,8 +444,7 @@
             <End Role="Tbl_UrunGrup" EntitySet="Tbl_UrunGrup" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="DbOtelModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -582,6 +585,10 @@
           <NavigationProperty Name="Tbl_Departman" Relationship="Self.FK_Tbl_Personel_Tbl_Departman" FromRole="Tbl_Personel" ToRole="Tbl_Departman" />
           <NavigationProperty Name="Tbl_Durum" Relationship="Self.FK_Tbl_Personel_Tbl_Durum" FromRole="Tbl_Personel" ToRole="Tbl_Durum" />
           <NavigationProperty Name="Tbl_Gorev" Relationship="Self.FK_Tbl_Personel_Tbl_Gorev" FromRole="Tbl_Personel" ToRole="Tbl_Gorev" />
+          <Property Name="KimlikOn" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="KimlikArka" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Sifre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Yetki" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="Tbl_Telefon">
           <Key>
@@ -1025,6 +1032,10 @@
           <EntitySetMapping Name="Tbl_Personel">
             <EntityTypeMapping TypeName="DbOtelModel.Tbl_Personel">
               <MappingFragment StoreEntitySet="Tbl_Personel">
+                <ScalarProperty Name="Yetki" ColumnName="Yetki" />
+                <ScalarProperty Name="Sifre" ColumnName="Sifre" />
+                <ScalarProperty Name="KimlikArka" ColumnName="KimlikArka" />
+                <ScalarProperty Name="KimlikOn" ColumnName="KimlikOn" />
                 <ScalarProperty Name="PersonelID" ColumnName="PersonelID" />
                 <ScalarProperty Name="AdSoyad" ColumnName="AdSoyad" />
                 <ScalarProperty Name="TC" ColumnName="TC" />

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 using OtelSistemi.Entitiy;
@@ -34,6 +35,17 @@ namespace OtelSistemi.Repositories
         public void Tupdate(T p)
         {
             db.SaveChanges();
+        }
+        //Linq Find metodu
+        public T Find(Expression<Func<T,bool>>where)
+        {
+            return db.Set<T>().FirstOrDefault(where);
+        }
+
+        //Şartlı Listeleme  
+        public List<T> GetListByID(Expression<Func<T, bool>> filter)
+        { 
+            return db.Set<T>().Where(filter).ToList();
         }
     }
 }

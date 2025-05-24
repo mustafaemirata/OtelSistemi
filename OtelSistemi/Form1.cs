@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using OtelSistemi.Formlar.Personel;
 
 namespace OtelSistemi
 {
@@ -80,6 +81,13 @@ namespace OtelSistemi
         private void barButtonItem10_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             Formlar.Personel.FrmPersonelKart fr = new Formlar.Personel.FrmPersonelKart();
+            fr.Show();
+        }
+
+        private void btnPersonelListe_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Formlar.Personel.FrmPersonelListesi fr = new Formlar.Personel.FrmPersonelListesi();
+            fr.MdiParent = this;
             fr.Show();
         }
     }

@@ -26,6 +26,10 @@ namespace OtelSistemi.Entitiy
         public Nullable<int> Gorev { get; set; }
         public string Aciklama { get; set; }
         public Nullable<int> Durum { get; set; }
+        public string KimlikOn { get; set; }
+        public string KimlikArka { get; set; }
+        public string Sifre { get; set; }
+        public string Yetki { get; set; }
     
         public virtual Tbl_Departman Tbl_Departman { get; set; }
         public virtual Tbl_Durum Tbl_Durum { get; set; }
